@@ -1,0 +1,84 @@
+:root {
+  font-family: 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(93, 140, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 92% 20%, rgba(255, 130, 196, 0.15), transparent 36%),
+    linear-gradient(160deg, #f8f9ff 0%, #eef2ff 45%, #f8f6ff 100%);
+}
+
+.portfolio-shell {
+  --k-color-primary: #3f6cff;
+  --k-color-ios-primary: #3f6cff;
+  color: #151521;
+}
+
+.hero-block {
+  margin-top: 1rem;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.hero-block h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.hero-block p {
+  color: #3f4560;
+  margin: 0.75rem 0 0;
+  max-width: 62ch;
+}
+
+.chip-row {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.8rem;
+}
+
+.work-card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.work-card h3 {
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.work-card p {
+  margin: 0.5rem 0 0;
+  color: #474d67;
+  font-size: 0.95rem;
+}
+
+.contact-list {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.text-link {
+  color: #3f6cff;
+  font-weight: 600;
+}
