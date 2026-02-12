@@ -1,116 +1,70 @@
-import {
-  App,
-  Block,
-  BlockTitle,
-  Button,
-  Card,
-  Chip,
-  Link,
-  List,
-  ListItem,
-  Navbar,
-  Page,
-} from 'konsta/react';
+const focusAreas = [
+  'Frontend Engineering',
+  'UI/UX Design',
+  'Performance Optimization',
+];
 
-const highlights = ['Frontend Engineering', 'UI Systems', 'Product Polish', 'Design Systems'];
-
-const works = [
+const projects = [
   {
-    title: 'Aurora Dashboard',
-    text: 'Clean analytics surfaces with a calm visual hierarchy and fast interactions.',
-    impact: 'Reduced onboarding time by 28%',
+    title: 'PixelFlow Dashboard',
+    description:
+      'A clean analytics dashboard that combines actionable metrics with refined typography and subtle glassmorphism.',
+    stack: 'React · TypeScript · Chart.js',
   },
   {
-    title: 'SwiftCart Mobile',
-    text: 'A high-conversion checkout flow designed with clarity and minimal friction.',
-    impact: 'Increased checkout completion by 19%',
+    title: 'ShopSprint Mobile UI',
+    description:
+      'A conversion-focused e-commerce interface designed with micro-interactions, smooth transitions, and quick checkout.',
+    stack: 'React Native · Figma · Firebase',
   },
   {
-    title: 'Focus Notes',
-    text: 'A distraction-free writing space with elegant typography and quick sync.',
-    impact: 'Reached 15k+ monthly active users',
+    title: 'Aurora Notes',
+    description:
+      'A minimal note-taking app with focus mode, keyboard-first workflows, and iCloud-inspired visual polish.',
+    stack: 'Next.js · Prisma · PostgreSQL',
   },
 ];
 
-const processSteps = [
-  'Discover: understand users, business goals, and product constraints.',
-  'Design: map clean flows and craft thoughtful visual direction.',
-  'Build: ship performant interfaces with reusable components.',
-  'Polish: improve micro-interactions, accessibility, and speed.',
-];
-
-export default function PortfolioApp() {
+export default function App() {
   return (
-    <App theme="ios" className="portfolio-shell">
-      <Page>
-        <Navbar title="Mohammad Hasan Mahmud" subtitle="Personal Portfolio" />
-
-        <Block className="hero-block frost-card">
-          <p className="eyebrow">Crafting digital products</p>
-          <h1>Simple, modern experiences with Apple-inspired polish.</h1>
-          <p>
-            I design and build web products that feel intuitive, premium, and focused on what matters most.
-          </p>
-          <div className="chip-row">
-            {highlights.map((item) => (
-              <Chip key={item} outline>
-                {item}
-              </Chip>
-            ))}
-          </div>
-          <div className="hero-actions">
-            <Button large tonal component="a" href="mailto:mohammad@example.com">
-              Book a Call
-            </Button>
-            <Link className="text-link" href="#work">
-              View Work
-            </Link>
-          </div>
-        </Block>
-
-        <BlockTitle id="work">Selected Work</BlockTitle>
-        <Block className="card-grid">
-          {works.map((work) => (
-            <Card key={work.title} outline className="work-card frost-card">
-              <h3>{work.title}</h3>
-              <p>{work.text}</p>
-              <span>{work.impact}</span>
-            </Card>
+    <div className="site-shell">
+      <header className="hero card">
+        <p className="eyebrow">Portfolio</p>
+        <h1>Mohammad Hasan Mahmud</h1>
+        <p className="subtitle">
+          I craft modern digital experiences with a simple, premium feel inspired by Apple's design language.
+        </p>
+        <div className="chips">
+          {focusAreas.map((area) => (
+            <span key={area} className="chip">
+              {area}
+            </span>
           ))}
-        </Block>
+        </div>
+      </header>
 
-        <BlockTitle>How I Work</BlockTitle>
-        <List inset strong className="process-list frost-card">
-          {processSteps.map((step) => (
-            <ListItem key={step} title={step} />
+      <section className="card">
+        <h2>Selected Work</h2>
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article key={project.title} className="project-card">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <span>{project.stack}</span>
+            </article>
           ))}
-        </List>
+        </div>
+      </section>
 
-        <BlockTitle>About</BlockTitle>
-        <Card outline className="about-card frost-card">
-          <p>
-            I’m Mohammad Hasan Mahmud, a frontend-focused developer passionate about building interfaces that are
-            minimal, purposeful, and delightful to use. I care deeply about typography, spacing, motion, and product
-            clarity.
-          </p>
-        </Card>
-
-        <BlockTitle>Contact</BlockTitle>
-        <List inset strong className="contact-list frost-card">
-          <ListItem title="Email" subtitle="mohammad@example.com" />
-          <ListItem title="Location" subtitle="Bangladesh" />
-          <ListItem title="Availability" subtitle="Open for freelance and full-time opportunities" />
-        </List>
-
-        <Block className="cta-wrap">
-          <Button large component="a" href="mailto:mohammad@example.com">
-            Let’s Build Something Great
-          </Button>
-          <Link className="text-link" href="https://www.linkedin.com" target="_blank">
-            LinkedIn
-          </Link>
-        </Block>
-      </Page>
-    </App>
+      <section className="card contact-card">
+        <h2>Let’s build something elegant.</h2>
+        <p>
+          Available for freelance and full-time opportunities. Reach out to discuss your next web product.
+        </p>
+        <a href="mailto:mohammad@example.com" className="cta-button">
+          Contact Me
+        </a>
+      </section>
+    </div>
   );
 }

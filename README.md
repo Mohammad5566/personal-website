@@ -1,12 +1,6 @@
 # Personal Portfolio Website
 
-A simple React + Vite portfolio starter for **Mohammad Hasan Mahmud**, rebuilt with **Konsta UI** and an Apple-inspired visual style.
-
-## Stack
-
-- React
-- Vite
-- Konsta UI (`konsta/react` + `konsta/css`)
+A React + Vite portfolio starter for **Mohammad Hasan Mahmud**, with a clean, Apple-inspired visual style (soft gradients, rounded cards, refined typography, and minimal layout complexity).
 
 ## Run locally
 
@@ -14,6 +8,8 @@ A simple React + Vite portfolio starter for **Mohammad Hasan Mahmud**, rebuilt w
 npm install
 npm run dev
 ```
+
+Then open the URL shown by Vite (usually `http://localhost:5173`).
 
 ## Build for production
 
